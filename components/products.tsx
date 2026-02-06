@@ -67,20 +67,6 @@ const products = [
   },
   {
     icon: Truck,
-    title: "PedirJa",
-    description:
-      "Sistema completo de delivery para restaurantes e estabelecimentos. Ofereca pedidos online com uma plataforma robusta e facil de usar.",
-    features: [
-      "Cardapio digital",
-      "Gestao de pedidos",
-      "Rastreamento em tempo real",
-      "Pagamento online",
-    ],
-    href: "https://pedirja.com.br/",
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    icon: Truck,
     title: "Pedido da Hora",
     description:
       "Plataforma de delivery com foco em agilidade e experiencia do cliente. Solucao moderna para negocio de alimentacao que quer vender online.",
