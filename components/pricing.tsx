@@ -36,8 +36,8 @@ const plans = [
   {
     name: "Empresarial",
     description: "Solucao completa para empresas que precisam de tudo integrado.",
-    price: "Sob consulta",
-    period: "",
+    price: "925",
+    period: "/mês",
     features: [
       "CRM Atendo 05 Canais",
       "03 Cartões digitais",
