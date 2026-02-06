@@ -9,39 +9,43 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-// ====================================================================
-// INSTRUCAO: Crie uma conta gratuita em https://formspree.io
-// Depois crie um formulario e substitua o ID abaixo pelo seu.
-// Exemplo: se seu endpoint for https://formspree.io/f/xpzvqkla
-// coloque "xpzvqkla" abaixo.
-// ====================================================================
-const FORMSPREE_ID = "SEU_ID_AQUI";
-
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const data = {
+      name: formData.get("name"),
+      company: formData.get("company"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       if (res.ok) {
         setSubmitted(true);
         form.reset();
+      } else {
+        setError("Erro ao enviar mensagem. Tente novamente.");
       }
     } catch {
-      // Fallback: se Formspree nao estiver configurado, ainda mostra sucesso para demo
-      setSubmitted(true);
+      setError("Erro de conexao. Verifique sua internet e tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -183,6 +187,7 @@ export function Contact() {
                       </Label>
                       <Input
                         id="company"
+                        name="company"
                         placeholder="Nome da empresa"
                       />
                     </div>
@@ -195,6 +200,7 @@ export function Contact() {
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="seu@email.com"
                         required
@@ -206,6 +212,7 @@ export function Contact() {
                       </Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
                         placeholder="(00) 00000-0000"
                       />
@@ -218,6 +225,7 @@ export function Contact() {
                     </Label>
                     <Input
                       id="subject"
+                      name="subject"
                       placeholder="Como podemos ajudar?"
                       required
                     />
@@ -229,14 +237,24 @@ export function Contact() {
                     </Label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Descreva o que voce precisa..."
                       rows={5}
                       required
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="gap-2">
-                    Enviar mensagem
+                  {error && (
+                    <p className="text-sm text-destructive">{error}</p>
+                  )}
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="gap-2"
+                    disabled={loading}
+                  >
+                    {loading ? "Enviando..." : "Enviar mensagem"}
                     <Send className="h-4 w-4" />
                   </Button>
                 </form>
