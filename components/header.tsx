@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,15 +21,15 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-card/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground font-heading">
-              A
-            </span>
-          </div>
-          <span className="text-xl font-bold font-heading text-foreground">
-            Atendo
-          </span>
+        <a href="#" className="flex items-center">
+          <Image
+            src="/images/logo-atendo.png"
+            alt="Atendo Sistemas"
+            width={150}
+            height={45}
+            className="h-10 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop Nav */}

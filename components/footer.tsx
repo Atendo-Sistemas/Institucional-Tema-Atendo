@@ -3,8 +3,7 @@ const productLinks = [
   { label: "Cartoes Digitais", href: "https://meu.atendo.log.br" },
   { label: "Gerenciador de Faturas", href: "https://painel.atendo.log.br" },
   { label: "MasProspect Pro", href: "https://prospec.atendo.log.br/" },
-  { label: "PedirJa", href: "https://pedirja.com.br/" },
-  { label: "Pedido da Hora", href: "#contato" },
+  { label: "Delivery e Automacao", href: "#contato" },
 ];
 
 const siteLinks = [
@@ -22,6 +21,8 @@ const legalLinks = [
   { label: "LGPD", href: "#" },
 ];
 
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-foreground text-background">
@@ -29,13 +30,14 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground font-heading">
-                  A
-                </span>
-              </div>
-              <span className="text-xl font-bold font-heading">Atendo</span>
+            <div className="flex items-center">
+              <Image
+                src="/images/logo-atendo.png"
+                alt="Atendo Sistemas"
+                width={140}
+                height={42}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="mt-4 text-sm leading-relaxed opacity-70">
               Sistema de Atendimento completo para empresas de todos os portes.
