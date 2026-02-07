@@ -67,31 +67,19 @@ const products = [
   },
   {
     icon: Truck,
-    title: "PedirJa",
+    title: "Delivery e Automacao",
     description:
-      "Sistema completo de delivery para restaurantes e estabelecimentos. Ofereca pedidos online com uma plataforma robusta e facil de usar.",
+      "Sistema completo para delivery, pedidos online e automacao de atendimento. Gerencie pedidos, cardapio digital, pagamentos e entregas em uma unica plataforma para restaurantes, lanchonetes, mercados e muito mais.",
     features: [
-      "Cardapio digital",
-      "Gestao de pedidos",
-      "Rastreamento em tempo real",
-      "Pagamento online",
-    ],
-    href: "https://pedirja.com.br/",
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    icon: Truck,
-    title: "Pedido da Hora",
-    description:
-      "Plataforma de delivery com foco em agilidade e experiencia do cliente. Solucao moderna para negocio de alimentacao que quer vender online.",
-    features: [
-      "Interface intuitiva",
-      "Integracoes de pagamento",
-      "Relatorio de vendas",
-      "Suporte dedicado",
+      "Pedidos online e via WhatsApp",
+      "Cardapio digital personalizado",
+      "Automacao de atendimento",
+      "Relatorios de vendas e desempenho",
+      "Impressao automatica na cozinha",
+      "Geolocalizacao de entregas",
     ],
     href: "#contato",
-    color: "bg-accent/10 text-accent",
+    color: "bg-primary/10 text-primary",
   },
 ];
 
@@ -109,7 +97,7 @@ export function Products() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Um ecossistema completo de ferramentas para gerenciar atendimento,
-            vendas, financeiro e delivery.
+            vendas, financeiro e automacao do seu negocio.
           </p>
         </div>
 
