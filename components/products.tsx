@@ -67,17 +67,19 @@ const products = [
   },
   {
     icon: Truck,
-    title: "Pedido da Hora",
+    title: "Delivery e Automacao",
     description:
-      "Plataforma de delivery com foco em agilidade e experiencia do cliente. Solucao moderna para negocio de alimentacao que quer vender online.",
+      "Sistema completo para delivery, pedidos online e automacao de atendimento. Gerencie pedidos, cardapio digital, pagamentos e entregas em uma unica plataforma para restaurantes, lanchonetes, mercados e muito mais.",
     features: [
-      "Interface intuitiva",
-      "Integracoes de pagamento",
-      "Relatorio de vendas",
-      "Suporte dedicado",
+      "Pedidos online e via WhatsApp",
+      "Cardapio digital personalizado",
+      "Automacao de atendimento",
+      "Relatorios de vendas e desempenho",
+      "Impressao automatica na cozinha",
+      "Geolocalizacao de entregas",
     ],
     href: "#contato",
-    color: "bg-accent/10 text-accent",
+    color: "bg-primary/10 text-primary",
   },
 ];
 
@@ -95,7 +97,7 @@ export function Products() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Um ecossistema completo de ferramentas para gerenciar atendimento,
-            vendas, financeiro e delivery.
+            vendas, financeiro e automacao do seu negocio.
           </p>
         </div>
 
